@@ -1,0 +1,31 @@
+{{define "base"}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{.PageTitle}} — {{.SiteTitle}}</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <strong>{{.Therapist}}</strong>
+      <div style="font-size:0.9rem;color:#666">{{.SiteTitle}}</div>
+    </div>
+    <nav>
+      {{range .Pages}}<a href="{{.OutFile}}">{{.Title}}</a>{{end}}
+      <a class="booking" href="{{.Booking}}" target="_blank" rel="noopener">Book Now</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{ block "content" . }}{{ end }}
+  </main>
+
+  <footer>
+    <div>© {{.Year}} {{.Therapist}} — <a href="{{.Booking}}" target="_blank" rel="noopener">Book Now</a></div>
+  </footer>
+</body>
+</html>
+{{end}}
