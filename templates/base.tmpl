@@ -9,14 +9,19 @@
 </head>
 <body>
   <header class="header">
-    <div>
-      <strong>{{.Therapist}}</strong>
-      <div style="font-size:0.9rem;color:#666">{{.SiteTitle}}</div>
+    <div class="header-inner">
+      <div class="brand">
+        <strong>{{.Therapist}}</strong>
+        <div class="tag">{{.SiteTitle}}</div>
+      </div>
+
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
+      <nav id="main-nav" class="nav" aria-label="Main navigation">
+        {{range .Pages}}<a href="{{.OutFile}}">{{.Title}}</a>{{end}}
+        <a class="booking" href="{{.Booking}}" target="_blank" rel="noopener">Book Now</a>
+      </nav>
     </div>
-    <nav>
-      {{range .Pages}}<a href="{{.OutFile}}">{{.Title}}</a>{{end}}
-      <a class="booking" href="{{.Booking}}" target="_blank" rel="noopener">Book Now</a>
-    </nav>
   </header>
 
   <main class="container">
@@ -26,6 +31,8 @@
   <footer>
     <div>© {{.Year}} {{.Therapist}} — <a href="{{.Booking}}" target="_blank" rel="noopener">Book Now</a></div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
 {{end}}
