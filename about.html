@@ -9,14 +9,19 @@
 </head>
 <body>
   <header class="header">
-    <div>
-      <strong>Massage Therapist</strong>
-      <div style="font-size:0.9rem;color:#666">Massage Therapy</div>
+    <div class="header-inner">
+      <div class="brand">
+        <strong>Massage Therapist</strong>
+        <div class="tag">Massage Therapy</div>
+      </div>
+
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
+      <nav id="main-nav" class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
+        <a class="booking" href="https://your-booking.example" target="_blank" rel="noopener">Book Now</a>
+      </nav>
     </div>
-    <nav>
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a>
-      <a class="booking" href="https://your-booking.example" target="_blank" rel="noopener">Book Now</a>
-    </nav>
   </header>
 
   <main class="container">
@@ -31,5 +36,7 @@
   <footer>
     <div>© 2025 Massage Therapist — <a href="https://your-booking.example" target="_blank" rel="noopener">Book Now</a></div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
